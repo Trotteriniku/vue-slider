@@ -51,6 +51,10 @@ const {createApp} = Vue
                 if (index === this.activeSlide) {
                     return 'active'
                 }
+            },
+            thumbshowclick(index){
+                
+                this.activeSlide= index
             }
         }
     }).mount('#app')
