@@ -35,17 +35,8 @@ const {createApp} = Vue
             }
         },
         methods:{
-            previmg(){
-                if (this.activeSlide > 0) {
-                    this.activeSlide -= 1
-                }
-               
-            },
-            nextimg(){
-                if (this.activeSlide < this.slides.length -1) {
-                    this.activeSlide += 1 
-                }
-                
+            scrollSlide(dir){
+                this.activeSlide=(this.activeSlide + dir % this.slides.length + this.slides.length)% this.slides.length
             },
             isActive(index){
                 if (index === this.activeSlide) {
